@@ -1,10 +1,19 @@
 import ProductList from "../components/ProductList";
 import React from "react";
 
-const ProductsPage = ({ searchParams }: { searchParams: { category?: string } }) => {
-  const category = searchParams.category || "all";
+// Props tipi tanımı
+interface ProductsPageProps {
+  searchParams: {
+    category?: string;
+  };
+}
+
+// Fonksiyon tip güvenli
+const ProductsPage: React.FC<ProductsPageProps> = ({ searchParams }) => {
+  const category = searchParams?.category || "all";
+
   return (
-    <div className="">
+    <div>
       <ProductList category={category} params="products" />
     </div>
   );
