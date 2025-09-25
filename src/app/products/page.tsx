@@ -1,15 +1,6 @@
 import ProductList from "../components/ProductList";
-import React from "react";
 
-// Props tipi tanımı
-interface ProductsPageProps {
-  searchParams: {
-    category?: string;
-  };
-}
-
-// Fonksiyon tip güvenli
-const ProductsPage: React.FC<ProductsPageProps> = ({ searchParams }) => {
+export default function ProductsPage({ searchParams }: { searchParams?: { category?: string } }) {
   const category = searchParams?.category || "all";
 
   return (
@@ -17,6 +8,4 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ searchParams }) => {
       <ProductList category={category} params="products" />
     </div>
   );
-};
-
-export default ProductsPage;
+}
