@@ -9,3 +9,4 @@ export default function ProductsPage({ searchParams }: { searchParams?: { catego
     </div>
   );
 }
+   
